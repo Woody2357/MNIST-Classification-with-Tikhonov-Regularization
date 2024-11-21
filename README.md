@@ -3,10 +3,10 @@
 The task is to select all images with digits 1 and all images with digits 7 from the training set, find a dividing surface that separates them, and test this dividing surface on the 1’s and 7’s from the test set.
 
 We aim at finding a dividfing hyperplane $w^{\top}x+b=0$ with that $w^{\top}x+b>0$ for all (almost all) $x_j$ corresponding to 1 (labeled with $y_j=1$) and $w^{\top}x+b<0$ for all (almost all) $x_j$ corresponding to 7 (labeled with $y_j=-1$). This task can be modeled as a nonlinear least squares problem:
-$$f(w)=\frac{1}{2}\sum_{j=1}^n[r_j(w)]^2, \quad r_j(w)=\log\left(1+e^{-q(x_j;w)}\right),$$
+$$\begin{equation}f(w)=\frac{1}{2}\sum_{j=1}^n[r_j(w)]^2, \quad r_j(w)=\log\left(1+e^{-q(x_j;w)}\right),\end{equation}$$
 where $q(x_j;w):=y_j(x^{\top}Wx+v^{\top}x+b)$.
 
-‘mnist_2categories_quadratic_NLLS_nPCA.m’ solves this nonlinear least squares problem and find a dividing quadratic
+‘mnist_2categories_quadratic_NLLS_nPCA.m’ solves this nonlinear least squares problem and finds a dividing quadratic
 hypersurface using the Levenberg-Marquardt algorithm. It also finds out how the number of PCAs affects the number of misclassified digits.
 
 'mnist_2categories_quadratic_NLLS_GN.m' solves this nonlinear least squares problem using the Gauss-Newton algorithm.
