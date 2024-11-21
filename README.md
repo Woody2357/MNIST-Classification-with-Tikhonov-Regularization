@@ -12,7 +12,7 @@ hypersurface using the Levenberg-Marquardt algorithm. It also finds out how the 
 'mnist_2categories_quadratic_NLLS_GN.m' solves this nonlinear least squares problem using the Gauss-Newton algorithm.
 
 This task can be modeled as a smooth optimization problem with Tikhonov regularization:
-$$ f(w)=\frac{1}{n}\sum_{j=1}^{n}\log\left(1+e^{-q(x_j;w)}\right)+\frac{\lambda}{2}\|w\|^2. $$
+$$ f(w)=\frac{1}{n}\sum_{j=1}^{n}\log(1+e^{-q(x_j;w)})+\frac{\lambda}{2}\|w\|^2. $$
 Here $w$ denotes the $(d^2+d+1)$-dimensional vector of coefficients of $\{W,v,b\}$.
 
 ‘mnist_2categories_quadratic_NLLS_SGD.m’ solves this regularized problem with Stochastic Gradient Descent. It also compare different batch sizes and step sizes. Also, it provides three stepsizes decreasing strategies.
